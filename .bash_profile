@@ -123,49 +123,7 @@ export PATH=/Users/duncanuszkay/src/github.com/Shopify/wabt/build:$PATH
 
 # ps1
 makePS1() {
-  GREEN="\033[0;32m"
-  NC="\033[0m"
-  MONKEY="🐒"
-  GIT_DIRTY="📝"
-  GIT_CLEAN="✅"
-  GIT_UNKNOWN="❓"
-
-  DATE=$(date +%k:%M)
-  DIR_NAME=$(basename $PWD)
-  # TODO fix color text
-  BASE="($DATE)"
-
-  if git rev-parse --is-inside-work-tree > /dev/null 2>&1 ; then
-    REPO_PATH=$(git rev-parse --show-toplevel)
-    REPO_NAME=$(basename $REPO_PATH)
-    CURRENT_BRANCH=$(current_git_branch)
-    BASE="$BASE $REPO_NAME::$CURRENT_BRANCH"
-
-    if test -d .git; then
-      BASE="$BASE"
-    else
-      BASE="$BASE::$DIR_NAME"
-    fi
-
-    STATUS_MESSAGE=$(git status -s)
-    if test ${#STATUS_MESSAGE} -eq 0; then
-      BASE="$BASE $GIT_CLEAN"
-    else
-      BASE="$BASE $GIT_DIRTY"
-    fi
-
-    #if test -d .git; then
-      #BASE="$BASE"
-    #else
-      #BASE="$BASE"
-    #fi
-  else
-    BASE="$BASE$DIR_NAME $GIT_UNKNOWN"
-  fi
-
-  BASE="$BASE $ "
-
-  echo "$BASE"
+  echo "$"
 }
 export PS1="\$(makePS1)"
 
