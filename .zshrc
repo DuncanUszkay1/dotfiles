@@ -5,5 +5,9 @@ function  uuid {
 }
 
 function mend {
-  git add -A; git commit --amend --no-edit
+  git add -A && git commit --amend --no-edit
+} 
+
+function mendf {
+  git add -A && git commit --amend --no-edit && git push origin HEAD --force
 } 
