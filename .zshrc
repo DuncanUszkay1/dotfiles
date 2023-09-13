@@ -10,4 +10,8 @@ function mend {
 
 function mendf {
   git add -A && git commit --amend --no-edit && git push origin HEAD --force
-} 
+}
+
+function mainbase {
+  git fetch origin main && git rebase origin/main
+}
